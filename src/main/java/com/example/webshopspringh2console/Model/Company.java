@@ -1,6 +1,7 @@
 package com.example.webshopspringh2console.Model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="COMPANY")
@@ -11,6 +12,9 @@ public class Company {
     long id;
     @Column(name="name")
     String name;
+
+    @OneToMany(mappedBy = "company")
+    private Set<Product> products;
 
     public Company() {
     }

@@ -3,8 +3,8 @@ package com.example.webshopspringh2console.Model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="COMPANYDESCRIPTION")
-public class CompanyDescription
+@Table(name="PRODUCTDESCRIPTION")
+public class ProductDescription
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,10 +13,13 @@ public class CompanyDescription
     @Column(name = "description")
     String description;
 
-    public CompanyDescription() {
+    @OneToOne
+    private Product product;
+
+    public ProductDescription() {
     }
 
-    public CompanyDescription(long id, String description) {
+    public ProductDescription(long id, String description) {
         this.id = id;
         this.description = description;
     }

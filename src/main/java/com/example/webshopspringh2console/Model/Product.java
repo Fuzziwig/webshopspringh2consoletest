@@ -1,9 +1,12 @@
 package com.example.webshopspringh2console.Model;
 
+
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@Table(name="PRODUCTS")
+@Table(name="PRODUCT")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +19,15 @@ public class Product {
     @Column(name="description")
     String description;
 
+    @ManyToOne
+    private Company company;
+
+    @OneToOne
+    private ProductDescription productDescription;
+
+    @ManyToMany
+    private Set<Category> categories;
+
     public Product() {
     }
 
@@ -25,6 +37,8 @@ public class Product {
         this.price = price;
         this.description = description;
     }
+
+
 
     public Integer getId() {
         return id;
