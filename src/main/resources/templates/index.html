@@ -28,11 +28,11 @@
             <td th:text="${product.price}"></td>
             <td th:text="${product.description}"></td>
 
-            <td ><a th:href="@{/opdaterProduct/{id}(id=${product.id})}"><button>Opdater</button></a></td>
-            <td ><a th:href="@{/sletProduct/{id}(id=${product.id})}"><button>slet</button></a></td>
+            <td class="btn btn-warning"><a th:href="@{/opdaterProduct/{id}(id=${product.id})}">Opdater</a></td>
+            <td class="btn btn-danger"><a th:href="@{/sletProduct/{id}(id=${product.id})}">slet</a></td>
         </tr>
     </table>
-
+    <a class="btn btn-primary" href="/h2-console">H2-console</a>
     <a class="btn btn-primary" href="/opretProduct">Opret bestilling</a>
 </div>
 
