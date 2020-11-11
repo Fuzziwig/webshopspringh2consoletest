@@ -20,4 +20,10 @@ public class HomeController {
     public String index2(){
         return "index";
     }
+
+    @GetMapping("/hemmeligside")
+    public String hemmelig(){
+        return "product";
+    }
+
 }
