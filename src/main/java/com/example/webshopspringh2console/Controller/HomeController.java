@@ -21,9 +21,4 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/hemmeligside")
-    public String hemmelig(){
-        return "product";
-    }
-
 }
